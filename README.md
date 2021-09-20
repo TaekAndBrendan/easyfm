@@ -49,14 +49,12 @@ python easyfm.py
 
 easyfm is provided under the MIT license and is based on other open-source software and Python packages:
 
-[Biopython](https://biopython.org/wiki/Documentation)  for biological data computation
-
+* [Biopython](https://biopython.org/wiki/Documentation)  for biological data computation
 * [PyQt5](https://pypi.org/project/PyQt5/) for a Python binding of the cross-platform GUI toolkit Qt
 * [gffutils](https://github.com/daler/gffutils) for working with and manipulating the GFF and GTF format files
 * [Pyfastx](https://github.com/lmdu/pyfastx) for fast random access to sequences from plain and gzipped FASTA/Q file
 * [BLAST+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) and [Ensembl](https://m.ensembl.org/info/docs/webcode/mirror/tools/blast.html) for a sequence similarity search
-
-[BLAT](https://genome.ucsc.edu/goldenPath/help/blatSpec.html) and [Ensembl](https://m.ensembl.org/info/docs/webcode/mirror/tools/blast.html) for rapidly aligning long sequences and gapped mapping to the genome
+* [BLAT](https://genome.ucsc.edu/goldenPath/help/blatSpec.html) and [Ensembl](https://m.ensembl.org/info/docs/webcode/mirror/tools/blast.html) for rapidly aligning long sequences and gapped mapping to the genome
 
 ### 3.4 GETTING STARTED
 
