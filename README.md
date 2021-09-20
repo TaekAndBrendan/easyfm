@@ -79,10 +79,10 @@ Figure 1: Integration of secondary window with main work module of easyfm.
 
 These are separated into four modules based on the type of file that is to be analysed.
 
-> Basic Local Alignment Search Tool (BLAST)   # All BLAST output file formats including a xml file parsing feature
-> BLAST-Like Alignment Tool (BLAT)    # BLAT a psl file format
-> Open Reading Frame (ORF)    # Fasta file format
-> File Manipulation   # Fastq, fasta, gff, and gtf file format
+* Basic Local Alignment Search Tool (BLAST)   # All BLAST output file formats including a xml file parsing feature
+* BLAST-Like Alignment Tool (BLAT)    # BLAT a psl file format
+* Open Reading Frame (ORF)    # Fasta file format
+* File Manipulation   # Fastq, fasta, gff, and gtf file format
 
 Each of these modules contains many user-friendly navigation/interactive modes for manipulating, filtering, sorting, converting, or analysing these types of files. Check out the documentation for each module for more information about the GUI-based interactive modes.
 
