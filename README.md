@@ -49,7 +49,7 @@ python easyfm.py
 
 easyfm is provided under the MIT license and is based on other open-source software and Python packages:
 
-Biopython for biological data computation
+[Biopython](https://biopython.org/wiki/Documentation)  for biological data computation
 
 * PyQt5 for a Python binding of the cross-platform GUI toolkit Qt
 * gffutils for working with and manipulating the GFF and GTF format files
