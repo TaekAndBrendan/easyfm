@@ -1,6 +1,6 @@
 # easyfm: An easy software suite for file manipulation of Next Generation Sequencing data on desktops
 
-Hyungtaek Jung & Daniel Ortiz-Barrientos’s Lab
+Hyungtaek Jung, Brendan Jeon and Daniel Ortiz-Barrientos
 
 ----
 
