@@ -25,7 +25,7 @@ Hyungtaek Jung, Brendan Jeon, Daniel Ortiz-Barrientos: easyfm: An easy software 
 
 ### 3.1 STABLE (version 1.0.1)
 
-Release date: August 2021 easyfm is made up of six programs and packages (See LICENSE), mainly written in Python 3.7+.
+Release date: September 2021 easyfm is made up of six programs and packages (See LICENSE), mainly written in Python 3.7+.
 
 ### 3.2 INSTALLATION
 Windows and Mac OS: Please download the program from https://github.com/TaekAndBrendan/easyfm/exe. Unzip the folder and double-click easyfm.exe.
