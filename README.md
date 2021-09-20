@@ -65,7 +65,7 @@ easyfm, mainly written in Python 3.7+, has two specific features: a working modu
 Figure 1: Integration of secondary window with main work module of easyfm.
 
  A) Four main work modules (green box) to BLAST, BLAT, ORF, and File Manipulation.
- B) Three secondary modules (green Box) to assist with main work modules and extra features using a right mouse click.
+ B) Three secondary modules (green box) to assist with main work modules and extra features using a right mouse click.
  C) Fasta file stats information accessed from B.
  D) Adjustable secondary window (Help and Log) on the top and bottom.
 
@@ -115,7 +115,7 @@ A BLAST xml file parsing with multiple options for a csv file.
 
 ##### 3.4.2.2 BLAT Module
 
-As BLAST, this is also designed to easily run searches on a local computer for any fasta files. If you are unclear whether your query sequences should be good for BLAST or BLAT, please see the difference between BLAST and BLAT at this link. Figure 3 shows an easy step for each stage for BLAT module.
+As BLAST, this is also designed to easily run searches on a local computer for any fasta files. If you are unclear whether your query sequences should be good for BLAST or BLAT, please see the difference between BLAST and BLAT at [this link](https://genome.ucsc.edu/FAQ/FAQblat.html). Figure 3 shows an easy step for each stage for BLAT module.
 ![Figure 3: User-friendly standalone work modules in easyfm: BLAT module](./readmeimg/figure3.png)
 Figure 3: User-friendly standalone work modules in easyfm: BLAT module.
 
@@ -161,7 +161,7 @@ D) Extract sequences with specific IDs from indexed reference FASTA and GFF3/GTF
 
 ### 3.5 FAQ
 
-Please contact Brendan Jeon and Hyungtaek Jung.
+Please contact [Brendan Joen](b.jeon@uq.edu.au) and [Hyungtaek Jung](hyungtaek.jung@uq.edu.au).
 
 ### 3.6 WIKI PAGE
 
@@ -169,7 +169,7 @@ Please see GitHub page.
 
 ### 3.7 AUTHOR
 
-Hyungtaek Jung and Brendan Joen.
+[Hyungtaek Jung](hyungtaek.jung@uq.edu.au) and [Brendan Joen](b.jeon@uq.edu.au).
 
 ### 3.8 COPYRIGHT
 
