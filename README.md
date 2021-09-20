@@ -65,7 +65,7 @@ python easyfm.py
 
 #### 3.4.1 Secondary Window (SW)
 ![Figure 1: Integration of secondary window with main work module of easyfm](./readmeimg/figure1.png)
-Figure 1: Integration of secondary window with main work module of **_easyfm_**.
+**Figure 1: Integration of secondary window with main work module of** **_easyfm_**.
 
  A) Four main work modules (green box) to BLAST, BLAT, ORF, and File Manipulation.
  B) Three secondary modules (green box) to assist with main work modules and extra features using a right mouse click.
@@ -94,7 +94,7 @@ Each of these modules contains many user-friendly navigation/interactive modes f
 The BLAST module is designed to easily format and run searches on a local computer and database. Since any fasta files can be used for BLAST functions without relying on NCBI web server, running local BLAST via easyfm shows great advantages to use customized databases including your own unpublished genome and transcriptome sequences that are not available on GenBank. Figure 2 shows an easy step for each stage for the BLAST module.
 
 ![Figure 2: User-friendly standalone work modules in easyfm: BLAST module](./readmeimg/figure2.png)
-Figure 2: User-friendly standalone work modules in **_easyfm_**: BLAST module.
+**Figure 2: User-friendly standalone work modules in** **_easyfm_**: BLAST module.
 
 Most steps include further manual options for a user-specified parameter.
 
@@ -120,7 +120,7 @@ A BLAST xml file parsing with multiple options for a csv file.
 
 As BLAST, this is also designed to easily run searches on a local computer for any fasta files. If you are unclear whether your query sequences should be good for BLAST or BLAT, please see the difference between BLAST and BLAT at [this link](https://genome.ucsc.edu/FAQ/FAQblat.html). Figure 3 shows an easy step for each stage for BLAT module.
 ![Figure 3: User-friendly standalone work modules in easyfm: BLAT module](./readmeimg/figure3.png)
-Figure 3: User-friendly standalone work modules in **_easyfm_**: BLAT module.
+**Figure 3: User-friendly standalone work modules in** **_easyfm_**: BLAT module.
 
 Most steps include further manual options for a user-specified parameter. Create and run a local database with multiple options for a psl file that can open with text editor and Excel.
 
@@ -133,7 +133,7 @@ Most steps include further manual options for a user-specified parameter. Create
 It is designed to easily run searches on a local computer for any fasta files to find an open reading frame (translated into amino acids containing no stop codons) performing a six-frame translation of a nucleotide given a particular genetic code, finding all ORFs possible. Since any fasta files can be used for ORF searches without relying on webservers or databases and limited query sequence length, running local ORF via easyfm shows great advantages to use your own unpublished genome and transcriptome sequences that are not available on the public database. Figure 4 shows an easy step for each stage for ORF module.
 
 ![Figure 4: User-friendly standalone work modules in easyfm: ORF module](./readmeimg/figure4.png)
-Figure 4: User-friendly standalone work modules in **_easyfm_**: ORF module.
+**Figure 4: User-friendly standalone work modules in** **_easyfm_**: ORF module.
 
 Most steps include further options for a user-specified parameter. Run ORF with different genetic codes for coding and protein sequences. A FASTA format output file of nucleotide and protein from a six-frame translation will be generated.
 
@@ -146,7 +146,7 @@ Most steps include further options for a user-specified parameter. Run ORF with 
 It is designed to easily index, extract (indexed ID with its sequence) and convert format on a local computer. Even the FASTQ file can be converted to the FASTA file and the given FASTA file can execute easily change its direction via Reverse Complement and Reverse. Since any FASTA/Q files can be used for File Manipulation functions without relying on a web server or a command-line, running local File Manipulation via easyfm shows great advantages to enhance user-friendliness including your own unpublished genome and transcriptome sequences that are not available on the public database. To accept the wide applications, easyfm File Manipulation allows users to easily manipulate (including filtering and extracting sequence regions) and consolidate from GFF and GTF files if its corresponding reference genome/transcriptome sequences are present. Figure 5 shows an easy step for each stage for the File Manipulation module.
 
 ![Figure 5: User-friendly standalone work modules in easyfm: File Manipulation module](./readmeimg/figure5.png)
-Figure 5: User-friendly standalone work modules in **_easyfm_**: File Manipulation module.
+**Figure 5: User-friendly standalone work modules in** **_easyfm_**: File Manipulation module.
 
 Most steps include further individual selection by manually saving as a FASTA file for a user-specified sequence ID.
 A) Select a FASTA file to index.
