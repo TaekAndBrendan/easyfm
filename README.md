@@ -10,7 +10,7 @@ easy file manipulation (easyfm) is a lightweight suite of software tools for wor
 
 ## 2 Citation
 
-Hyungtaek Jung, Brendan Jeon, Daniel Ortiz-Barrientos: easyfm: An easy software suite for file manipulation of Next Generation Sequencing data on desktops, PLoS Computational Biology ???
+Hyungtaek Jung, Brendan Jeon, Daniel Ortiz-Barrientos: easyfm: An easy software suite for file manipulation of Next Generation Sequencing data on desktops, PLoS Computational Biology Sumbitted.
 
 ## 3 Contents
 
