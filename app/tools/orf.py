@@ -1,4 +1,5 @@
 #! python3
+# modified https://github.com/zkstewart/orf-finder-py
 # Biopython based ORF Finder
 # This script will obtain open reading frames from a fasta-formatted file containing nucleotide transcripts.
 # Constraints can be altered to vary the strictness with which we accept or reject alternative start codons. 
