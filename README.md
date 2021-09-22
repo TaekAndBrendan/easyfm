@@ -164,7 +164,7 @@ D) Extract sequences with specific IDs from indexed reference FASTA and GFF3/GTF
 * **FM Step 8**: If you extract manually with flanking regions, please use “Filtering Options” too. Select your target “Sequence Name” and put a numeric number for “Forward” and “Reverse” that you want to extract as a fasta format. And then, click “Save filtered features” (Fig 5D).
 
 ### 3.5 FAQ
-We encourage users to use the issues. For further enquiries (including suggestion), you can also contact the **_easyfm_** development team [Brendan Joen](b.jeon@uq.edu.au) and [Hyungtaek Jung](hyungtaek.jung@uq.edu.au).
+We encourage users to use the [Issues](https://github.com/TaekAndBrendan/easyfm/issues). For further enquiries (including suggestion), you can also contact the **_easyfm_** development team [Brendan Joen](b.jeon@uq.edu.au) and [Hyungtaek Jung](hyungtaek.jung@uq.edu.au).
 
 ### 3.6 WIKI PAGE
 
