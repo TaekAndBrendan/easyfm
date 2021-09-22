@@ -28,7 +28,7 @@ Hyungtaek Jung, Brendan Jeon, Daniel Ortiz-Barrientos: **_easyfm_**: An **easy**
 Release date: September 2021 **_easyfm_** is made up of six programs and packages (See LICENSE), mainly written in Python 3.7+.
 
 ### 3.2 INSTALLATION
-Windows and Mac OS: Please download the program from [this link](https://github.com/TaekAndBrendan/easyfm/windows/easyfm.7z). Extract 'easyfm.7z' with [7z](https://www.7-zip.org/download.html) and double-click easyfm.exe.
+Windows and Mac OS: Please download the program from [this link](https://github.com/TaekAndBrendan/easyfm/raw/main/windows/easyfm.7z). Extract 'easyfm.7z' with [7z](https://www.7-zip.org/download.html) and double-click easyfm.exe.
 
 Linux: To install **_easyfm_**, run the following series of commands.
 
