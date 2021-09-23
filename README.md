@@ -42,7 +42,8 @@ git clone https://github.com/TaekAndBrendan/easyfm.git
 cd easyfm
 
 # Install packages
-pip install -U -r requirements.txt 
+# pip -m pip install --upgrade pip # if you get errors, try to upgrade pip 
+pip install -r requirements.txt 
 
 # Run
 python easyfm.py
