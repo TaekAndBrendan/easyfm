@@ -74,8 +74,8 @@ python easyfm.py
 
 * **SW Step 1**: Browse and select your work folder (Set Project) via the Project Folder tab and transfer all files that you want to import and export (Fig 1A and B). Once browsed and selected, click OK. This will be your work folder for all in-/out-put files. It is highly recommended to make sure your working directory is correct before moving on to the next steps, and before using any work module options.
 * **SW Step 2**: Select a fasta file to see its summary information by right clicking the mouse and choosing ‘Get Fast Information’. Alternatively, from the right click window you can open the file with text editors, delete the file and create a file/folder (Fig 1C and D).
-* **SW Step 3**: To see further assistance for each module, click Help (Fig 1E).
-* **SW Step 4**: To see real-time log reporting and monitoring for an executed job, click Log (Fig 1F).
+* **SW Step 3**: To see further assistance for each module, click Help (Fig 1D).
+* **SW Step 4**: To see real-time log reporting and monitoring for an executed job, click Log (Fig 1D).
 * **SW Step 5**: This secondary window can be adjustable in any four corners on the desktop by using the mouse (Fig 1).
 
 #### 3.4.2 Work Module
