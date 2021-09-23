@@ -52,9 +52,7 @@ Thumbs.db
 
 # app 
 venv/
-blastapp/build
 build*
 *.fas
 *.fxi
 basic-data/
-
