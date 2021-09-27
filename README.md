@@ -30,7 +30,7 @@ Release date: September 2021 **_easyfm_** is made up of six programs and package
 ### 3.2 INSTALLATION
 Windows and Mac OS: Please download the program from [this link](https://github.com/TaekAndBrendan/easyfm/raw/main/windows/easyfm.7z). Extract 'easyfm.7z' with [7z](https://www.7-zip.org/download.html) and double-click easyfm.exe.
 
-Linux: To install **_easyfm_**, run the following series of commands.
+Linux or Mac: To install **_easyfm_**, run the following series of commands.
 
 ~~~
 # Create the virtual environment
