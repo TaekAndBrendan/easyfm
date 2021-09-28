@@ -104,8 +104,7 @@ A) Create a local database by selecting nucleotide or protein.
 B) Job completion message and created database files listed in a secondary window.
 C) Run local BLAST with multiple features including output type.
 D) Convert from a BLAST archive file to a different output format.
-
-A BLAST xml file parsing with multiple options for a csv file.
+E) A BLAST xml file parsing with multiple options for a csv file.
 
 **Note: Please make sure all files are in the designated folder. Not sure, please see SW Step 1.**
 
