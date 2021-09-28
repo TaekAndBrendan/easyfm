@@ -20,7 +20,6 @@ class HelpWidget(QWidget):
         layout = QHBoxLayout()        
         text = "<h3>easyfm</h3>" \
                "<p><b>easyfm</b> has four main tools: <i>Blast</i>, <i>Blat</i>, <i>ORF</i> and <i>File Manipulation.</i></p>" \
-               "<p><a href='https://github.com/TaekAndBrendan/easyfm'><b>easyfm</b> User Manual</a></p>" \
                "<h4>Blast</h4>" \
                "<p><a href='https://www.ncbi.nlm.nih.gov/books/NBK279690/'>BLAST® Command Line Applications User Manual</a></p>" \
                "<p><ul>"\
@@ -48,7 +47,8 @@ class HelpWidget(QWidget):
                "<li>Sequence Reverse</li>" \
                "<li>Convert FastQ to FastA</li>"\
                "<li>Extract GFF/GTF</li>"\
-               "</ul></p>"
+               "</ul></p>"\
+               "<p>For more help and manual, please see the <a href='https://github.com/TaekAndBrendan/easyfm'><b>easyfm</b> GitHub page</a>.</p>" 
         # creating scroll label
         label = ScrollLabel(self)
  
