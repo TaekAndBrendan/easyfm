@@ -525,7 +525,7 @@ class SequenceConvertWidget(QWidget, BaseWidgetUtil):
     def is_valid_inputs(self):
         infilepath = self.file_editor.text()
         outfilepath = self.outfile_editor.text()
-        if is_valid(self, infilepath, 'Please check a fasta file') and is_valid(self, outfilepath, 'Please check a out file'):
+        if is_valid(self, infilepath, 'Please check a fasta file.'):
             return True
 
         input_folder_path = self.input_folder_editor.text()
