@@ -56,8 +56,8 @@ python easyfm.py
 
 * [Biopython](https://biopython.org/wiki/Documentation)  for biological data computation
 * [PyQt5](https://pypi.org/project/PyQt5/) for a Python binding of the cross-platform GUI toolkit Qt
-* [gffutils](https://github.com/daler/gffutils) for working with and manipulating the GFF and GTF format files
-* [Pyfastx](https://github.com/lmdu/pyfastx) for fast random access to sequences from plain and gzipped FASTA/Q file
+* [gffutils](https://github.com/daler/gffutils) for working with and manipulating the [GFF](https://seqan.readthedocs.io/en/master/Tutorial/InputOutput/GffAndGtfIO.html), [GFF3](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md) and [GTF](https://biocorecrg.github.io/PhD_course/gtf_format.html) format files
+* [Pyfastx](https://github.com/lmdu/pyfastx) for fast random access to sequences from plain and gzipped [FASTA](https://www.maplesoft.com/support/help/Maple/view.aspx?path=Formats/FASTA) and [FASTQ](https://www.maplesoft.com/support/help/maple/view.aspx?path=Formats%2FFASTQ) files
 * [BLAST+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) and [Ensembl](https://m.ensembl.org/info/docs/webcode/mirror/tools/blast.html) for a sequence similarity search
 * [BLAT](https://genome.ucsc.edu/goldenPath/help/blatSpec.html) and [Ensembl](https://m.ensembl.org/info/docs/webcode/mirror/tools/blast.html) for rapidly aligning long sequences and gapped mapping to the genome
 
