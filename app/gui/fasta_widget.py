@@ -85,6 +85,7 @@ class FastaWidget(QWidget):
         gff_widget = GffWidget(window=window)
         self.fasta_tab.addTab(gff_widget, 'Extract GFF/GTF')
 
+
 class FAFQWidget(QWidget, BaseWidgetUtil):
     def __init__(self, window=None, parent=None):
         super(FAFQWidget, self).__init__(parent)
@@ -210,7 +211,6 @@ class FAFQWidget(QWidget, BaseWidgetUtil):
 
     def load_fastaq(self):
         infilepath = self.browser_fastaq_file_editor.text()
-        print(infilepath)
         if is_fasta_file(infilepath) or get_compressed_file_type(infilepath) == 'fa':
             self.fastaq = pyfastx.Fasta(infilepath)
         elif is_fastq_file(infilepath) or get_compressed_file_type(infilepath) == 'fq':
@@ -353,6 +353,7 @@ class FAFQWidget(QWidget, BaseWidgetUtil):
         self.save_filtered_indexes_button.setText('Save Indexes')
         self.save_filtered_indexes_button.setEnabled(True)
 
+
 class FALoadWorker(QThread):
     def __init__(self, fastaq, index_list, parent=None):
         super(FALoadWorker, self).__init__(parent)
@@ -379,6 +380,7 @@ class FALoadWorker(QThread):
             self.index_list.addItem(item_to_add)
 
         self.index_list.setAlternatingRowColors(True)
+
 
 class FASaveWorker(QThread):
     # data = pyqtSignal(dict)
@@ -416,13 +418,14 @@ class FASaveWorker(QThread):
                 for rec in self.fastaq:
                     for prefix_index in self.prefix_indexes:
                         # if rec.name.startswith(self.prefix_indexes):
-                        print('-{}-'.format(prefix_index.strip()))
-                        print('={}='.format(rec.name.strip()))
+                        # print('-{}-'.format(prefix_index.strip()))
+                        # print('={}='.format(rec.name.strip()))
                         if rec.name.strip() == prefix_index.strip():
                             f.write('>{}\n{}\n'.format(rec.name, self.fastaq[rec.name].seq))
                             self.saved_count = self.saved_count + 1
                             break
             return
+
 
 class SequenceConvertWidget(QWidget, BaseWidgetUtil):
     def __init__(self, window=None, parent=None):
@@ -674,6 +677,7 @@ class ReverseSaveWorker(QThread):
         else:
             reverse(self.infilepath, self.outfilepath)
 
+
 class ReverseComplementSaveWorker(QThread):
     # data = pyqtSignal(dict)
     def __init__(self, infilepath, outfilepath, input_folder_path, out_folder_path, parent=None):
@@ -697,6 +701,7 @@ class ReverseComplementSaveWorker(QThread):
             reverse_complements(self.input_folder_path, self.out_folder_path)
         else:
             reverse_complement(self.infilepath, self.outfilepath)
+
 
 class FQ2FAWidget(QWidget, BaseWidgetUtil):
     def __init__(self, window=None, parent=None):
@@ -843,6 +848,7 @@ class FA2FQSaveWorker(QThread):
     def run(self):
         self._stopped = False
         covnert_fastq_into_fasta(self.infilepath, self.outfilepath)
+
 
 # load gff featues with thread
 gff_features = None
@@ -996,7 +1002,6 @@ class GffWidget(QWidget, BaseWidgetUtil):
         self.gff_count.setText('Count:{} '.format(len(gff_features)))
         model = TableModel(gff_features, ['Sequence Name', 'Source', 'Feature', 'Start', 'End', 'Score', 'Strand', 'Frame', 'Attribute'])
 
-
         self.table_view.setModel(model)
         self.table_view.resizeColumnsToContents()
         self.table_view.setAlternatingRowColors(True)
@@ -1016,8 +1021,6 @@ class GffWidget(QWidget, BaseWidgetUtil):
         self.feature_type_cb.addItem('Feature Type')
         for ftype in ftypes:
             self.feature_type_cb.addItem(ftype)
-
-
 
     def browse_fasta_file(self):
         filename, _ = QFileDialog.getOpenFileName(self,
@@ -1245,4 +1248,3 @@ class GFFSaveWorker(QThread):
             with open(path, 'w') as f:
                 f.write(ids)
                 f.write(feature.sequence(self.fastafile))
-

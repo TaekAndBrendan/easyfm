@@ -18,10 +18,10 @@ from app.tools.config import config, preference
 
 def init_tool():
     """set up"""
-    # init_libs()
     read_config()
     init_dirs()
     # setup_log()
+
 
 def init_dirs():
     project_folder = project_folder_path()
@@ -42,59 +42,6 @@ def setup_log():
 
 def log(msg):
     logging.info(msg)
-
-
-# def fetch_binaries():
-def init_libs():
-    # TODO
-    libs_target = config['libs_target']
-    path = config['libs']
-
-    if not os.path.exists(path) and os.path.exists(libs_target):
-        copy_tree(libs_target, path)
-
-    # TODO fix
-    # https://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/
-    # https://github.com/brenden17/blastapp/tree/main/libs/ncbi-blast/bins
-
-    if platform.system() == 'Windows':
-        blast_path = os.path.join(config['libs'], 'ncbi-blast', 'exes')
-        blast_url = "https://github.com/brenden17/blastapp/blob/main/libs/ncbi-blast/exes/"
-        blast_files = ['blastn.exe', 'blastp.exe', 'blastx.exe','makeblastdb.exe', 'blast_formatter.exe', 'nghttp2.dll']
-        
-        fetch_file_from(blast_path, blast_url, blast_files)
-
-        blat_path = os.path.join(config['libs'], 'blat', 'exes')
-        blat_url = "https://github.com/brenden17/blastapp/blob/main/libs/blat/exes/"
-        blat_files = ['blat.exe', 'cygwin1.dll']
-
-        fetch_file_from(blat_path, blat_url, blat_files)
-        
-    if platform.system() == 'Linux':
-        blast_path = os.path.join(config['libs'], 'ncbi-blast', 'bins')
-        blast_url = "https://github.com/brenden17/blastapp/blob/main/libs/ncbi-blast/bins/"
-        blast_files = ['blastn', 'blastp', 'blastx','makeblastdb', 'blast_formatter']
-        
-        fetch_file_from(blast_path, blast_url, blast_files)
-        
-        blat_path = os.path.join(config['libs'], 'blat', 'bins')
-        blat_url = "https://github.com/brenden17/blastapp/blob/main/libs/blat/bins/"
-        blat_files = ['blat']
-
-        fetch_file_from(blat_path, blat_url, blat_files)
-
-
-def fetch_file_from(fetch_path, fetch_url, fetch_files):
-    try:
-        os.makedirs(fetch_path, exist_ok=True)
-        for fetch_file in fetch_files:
-            filename = os.path.join(fetch_path, fetch_file)
-            if os.path.exists(filename):
-                continue
-            fetch_link = fetch_url +  fetch_file
-            urllib.request.urlretrieve(fetch_link, filename)
-    except Exception as e:
-        print("An exception occurred:" + e)
 
 
 def get_cmd(command, category='blast'):
@@ -165,15 +112,18 @@ def get_fasta_info(filename):
 
 def project_folder_path():
     return preference['project_folder'] if preference and 'project_folder'in preference else config['app']
-        
+
+
 def replace_ext(file_path, new_file_extension, extra=None):
     filename, file_extension = os.path.splitext(file_path)
     f, e = os.path.splitext(filename) # remove .
     return '{}.{}.{}'.format(f, extra, new_file_extension) if extra else '{}.{}'.format(f, new_file_extension)
 
+
 def replace_folder(folder_path, file_path):
     folder, filename = os.path.split(file_path)
     return os.path.join(folder_path, filename)
+
 
 def read_config():
     parser = SafeConfigParser()
@@ -183,7 +133,8 @@ def read_config():
         for section_name in parser.sections():
             for name, value in parser.items(section_name):
                 preference[name] = value
-            
+
+
 def write_config():
     parser = SafeConfigParser()
     parser.add_section('preference')
@@ -197,6 +148,7 @@ def write_config():
     # update config
     read_config()
 
+
 def open_default_application(filepath):
     if platform.system() == 'Darwin':
         subprocess.call(('open', filepath))
@@ -204,6 +156,7 @@ def open_default_application(filepath):
         os.startfile(filepath)
     else:
         subprocess.call(('xdg-open', filepath))
+
 
 def open_default_texteditor(filepath):
     try:
@@ -216,9 +169,11 @@ def open_default_texteditor(filepath):
     except Exception as e:
         raise e
 
+
 def get_filepath_project(filepath):
     filename = os.path.basename(filepath)
     return os.path.join(project_folder_path(), filename)
+
 
 def get_compressed_file_type(filepath):
     filename, ext = os.path.splitext(filepath)
@@ -231,11 +186,14 @@ def get_compressed_file_type(filepath):
 
     return None
 
+
 def is_fasta_file(filepath):
     return True if get_ext(filepath) in ('.fa', '.fasta', '.fas', '.fna') else False
 
+
 def is_fastq_file(filepath):
     return True if get_ext(filepath) in ('.fq', '.fastaq') else False
+
 
 def is_fastx_file(filepath):
     return True if is_fasta_file(filepath) or is_fastq_file(filepath) else False
@@ -243,16 +201,20 @@ def is_fastx_file(filepath):
     #     return True
     # return False
 
+
 def is_table_file(filepath):
     return True if get_ext(filepath) in ('.psl') else False
+
 
 def get_ext(filepath):
     filename, ext = os.path.splitext(filepath)
     return ext.lower()
 
+
 def get_valid_filename(filename):
     filename = str(filename).strip().replace(' ', '_')
     return re.sub(r'(?u)[^-\w.]', '', filename)
+
 
 def get_gff_features(infilepath):
     data = []
@@ -272,6 +234,7 @@ def get_gff_features(infilepath):
             feature_line = f.readline()
 
     return data, seqs, ftypes
+
 
 def filter_gff_features(features, seq=None, ftype=None, strand=None):
     data = []
@@ -300,6 +263,7 @@ def filter_gff_features(features, seq=None, ftype=None, strand=None):
             if feature[0] == seq and feature[2] == ftype and feature[6] == strand:
                 data.append(feature)
     return data
+
 
 def comamnds_to_list(options_string):
     temp_options_string = options_string

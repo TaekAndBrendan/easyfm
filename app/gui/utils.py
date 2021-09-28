@@ -38,12 +38,14 @@ from app.tools.utils import write_config, project_folder_path, open_default_appl
                                     open_default_texteditor
 from app.tools.biofiles import open_blast_result_as_table, open_psl_as_table
 
+
 def is_valid(widget, infilepath, msg=None):
     if not infilepath or not os.path.exists(infilepath):
         _msg = msg + ' The selected file or folder might not be found.' if msg else 'Please check that you supplied the correct filename or folder. The selected file or folder could not be found.'
         QMessageBox.about(widget, 'Information', _msg)
         return False
     return True
+
 
 class IconLabel(QWidget):
 
@@ -109,7 +111,6 @@ class QProcessWidgetUtil:
         stdout = bytes(data).decode('utf8')
         if stdout:
             self.process_log(stdout)
-
 
     def handle_state(self, state):
         states = {
@@ -183,6 +184,7 @@ class BaseWidgetUtil:
 
         return False
 
+
 class TableView(QTableView):
     def __init__(self, data=None, header=None):
         super(TableView, self).__init__()
@@ -197,6 +199,7 @@ class TableView(QTableView):
         for i in range(self.horizontalHeader().count()):
             self.horizontalHeader().setSectionResizeMode(i, QHeaderView.Stretch)
             # self.horizontalHeader().setSectionResizeMode(i, QHeaderView.ResizeToContents)
+
 
 class TableModel(QAbstractTableModel):
     def __init__(self, data=None, header=None):
@@ -233,6 +236,7 @@ class TableModel(QAbstractTableModel):
     def get_row(self, index):
         return self._data[index]
 
+
 class PDTableView(QTableView):
     def __init__(self, pd_data=None):
         super(PDTableView, self).__init__()
@@ -248,6 +252,7 @@ class PDTableView(QTableView):
         for i in range(self.horizontalHeader().count()):
             self.horizontalHeader().setSectionResizeMode(i, QHeaderView.Stretch)
             # self.horizontalHeader().setSectionResizeMode(i, QHeaderView.ResizeToContents)
+
 
 class PDTableModel(QAbstractTableModel):
     def __init__(self, data=None, header=None):
@@ -276,6 +281,7 @@ class PDTableModel(QAbstractTableModel):
 
     def get_row(self, index):
         return self._data.iloc[index].tolist()
+
 
 class CollapsibleBox(QWidget):
     def __init__(self, title='', parent=None):
@@ -451,7 +457,6 @@ class FileBrowserWidget(QWidget, BaseWidgetUtil):
 
         self.init_project()
 
-
     def open_menu(self, position):
         file_index = self.treeView.indexAt(position)
         path = self.fileModel.fileInfo(file_index).absoluteFilePath() if file_index.isValid() else project_folder_path()
@@ -608,9 +613,8 @@ class TableWidget(QWidget):
         self.table.setModel(model)
         self.table.update()
 
+
 class ScrollLabel(QScrollArea):
- 
-    # constructor
     def __init__(self, *args, **kwargs):
         QScrollArea.__init__(self, *args, **kwargs)
  
@@ -641,4 +645,3 @@ class ScrollLabel(QScrollArea):
     def setText(self, text):
         # setting text to the label
         self.label.setText(text)
-

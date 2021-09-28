@@ -38,6 +38,7 @@ from app.tools.utils import (
     comamnds_to_list,
 )
 
+
 # Stand-alone BLAST formatter client, version 2.11.0+
 class BlastWidget(QWidget):
     def __init__(self, window=None, parent=None):
@@ -222,6 +223,7 @@ class BlastDBWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
     def reset(self):
         pass
 
+
 class BlastRunWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
     def __init__(self, window=None, parent=None, **kwargs):
         super(BlastRunWidget, self).__init__(parent)
@@ -369,7 +371,6 @@ class BlastRunWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
         self.qprocess_button.clicked.connect(self.run_blast)
 
         main_layout.addLayout(blastdb_fourth_layout)
-
 
     def blastrun_out_type_changed(self):
         outfile = self.blastrun_outfile_editor.text()
@@ -677,7 +678,6 @@ class BlastConvertWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
             return;
 
         self._run_convert()
-
 
     def is_valid_inputs(self):
         blastconvert_infile = self.blastconvert_infile_editor.text()

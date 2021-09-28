@@ -5,7 +5,6 @@ from PyQt5.QtCore import (
     Qt,
     QSize,
 )
-
 from PyQt5.QtWidgets import (
     QApplication,
     QMainWindow,
@@ -63,7 +62,6 @@ class MainWindow(QMainWindow):
         self.set_window()
 
         self.init_ui()
-        
 
     def set_window(self):
         app = QApplication.instance()

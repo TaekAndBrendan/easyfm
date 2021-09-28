@@ -10,6 +10,7 @@ from Bio.Blast import NCBIXML
 
 from app.tools.utils import get_ext, is_fasta_file, replace_ext, get_compressed_file_type
 
+
 def parse_xml(filter_values):
     infile = filter_values['infile']
     outfile = filter_values['outfile']
@@ -276,8 +277,8 @@ def parse_xml2(filter_values, infile, outfile):
                     hsp = node.findall('./Iteration_hits/Hit/Hit_hsps/Hsp')[0]
                     
                     hsp_evalue = hsp.find('Hsp_evalue')
-                    print('float(hsp_evalue.text)')
-                    print(float(hsp_evalue.text))
+                    # print('float(hsp_evalue.text)')
+                    # print(float(hsp_evalue.text))
                     if E != 0 and float(hsp_evalue.text) > E:
                         continue
 
@@ -312,9 +313,11 @@ def parse_xml2(filter_values, infile, outfile):
             else:
                 pass
 
+
 def fasta_to_records(infile):
     handle = open(infile, 'fasta')
     return list(SeqIO.parse(handle, 'fasta'))
+
 
 def fasta_to_dataframe(infile, key='name', seqkey='sequence'):
     """Get fasta proteins into dataframe"""
@@ -323,6 +326,7 @@ def fasta_to_dataframe(infile, key='name', seqkey='sequence'):
     data = [(rec.name, str(rec.seq), str(rec.description)) for rec in recodes]
     return None
     # return pd.DataFrame(data, columns=(keys))
+
 
 def open_blast_result_as_table(infile):
     header = ['query', 'subject',
@@ -333,6 +337,7 @@ def open_blast_result_as_table(infile):
     return None
     # return pd.read_csv(infile, sep="\t", names=header)
 
+
 def open_psl_as_table(infile):
     header = ['match', 'mis-match', 'rep.match', 'N\'s', 
                 'Q gap count', 'Q gap bases', 'T gap count', 
@@ -342,6 +347,7 @@ def open_psl_as_table(infile):
 
     return None
     # return pd.read_csv(infile, sep='\t', skiprows=5, names=header)
+
 
 def covnert_fastq_into_fasta(infilepath, outfilepath):
     if '.gz' == get_ext(infilepath):
@@ -355,18 +361,6 @@ def covnert_fastq_into_fasta(infilepath, outfilepath):
             for record in SeqIO.parse(fasta_handler, 'fastq'):
                 fasta_out.write_record(record)
 
-# def covnert_fastq_into_fasta(infilepath, outfilepath):
-#     with open(infilepath, "r") as fasta_handler, open(outfilepath, "w") as fastq_handler:
-#         fasta_out = FastaIO.FastaWriter(fastq_handler, wrap=None)
-#         for record in SeqIO.parse(fasta_handler, "fastq"):
-#             # SeqIO.write(record, fastq_handler, "fasta")
-#             fasta_out.write_record(record)
-
-# def covnert_fastqgz_into_fasta(infilepath, outfilepath):
-#     with gzip.open(infilepath, 'rt') as fasta_handler, open(outfilepath, 'w') as fastq_handler:
-#         fasta_out = FastaIO.FastaWriter(fastq_handler, wrap=None)
-#         for record in SeqIO.parse(fasta_handler, 'fastq'):
-#             fasta_out.write_record(record)
 
 def reverse_complement(infilepath, outfilepath):
     if '.gz' == get_ext(infilepath):
@@ -392,6 +386,7 @@ def reverse_complement(infilepath, outfilepath):
                 # SeqIO.write(new_record, out_handler, 'fasta')
                 fasta_out.write_record(new_record)
 
+
 def reverse_complements(input_folder, out_folder):
     for f in os.listdir(input_folder):
         fpath = os.path.abspath(os.path.join(input_folder, f))
@@ -399,6 +394,7 @@ def reverse_complements(input_folder, out_folder):
             reverse_complement(fpath, os.path.join(out_folder, replace_ext(f, 'fa', 'R2')))
         if get_compressed_file_type(infilepath) == 'fa':
             reverse_complement(fpath, os.path.join(out_folder, replace_ext(f, 'gz', 'R2')))
+
 
 def reverse(infilepath, outfilepath):
     if '.gz' == get_ext(infilepath):
@@ -425,6 +421,7 @@ def reverse(infilepath, outfilepath):
                 new_record.description = ''
                 # SeqIO.write(new_record, out_handler, 'fasta')
                 fasta_out.write_record(new_record)
+
 
 def reverses(input_folder, out_folder):
     for f in os.listdir(input_folder):

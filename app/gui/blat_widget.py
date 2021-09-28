@@ -12,6 +12,7 @@ from PyQt5.QtWidgets import (
     QMessageBox,
     QTableView,
 )
+
 from app.gui.utils import (
     QProcessWidgetUtil,
     BaseWidgetUtil,
@@ -166,7 +167,6 @@ class BlatRunWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
 
         main_layout.addLayout(blastdb_fourth_layout)
 
-
     def get_dbfile(self):
         db_filename, _ = QFileDialog.getOpenFileName(
                                 self,
@@ -192,7 +192,6 @@ class BlatRunWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
             out_filename = replace_ext(infilename, 'psl')
             self.blatrun_outfile_editor.setText(out_filename)
 
-
     def blatrun_out_path(self):
         infilepath = self.blatrun_outfile_editor.text()
         filepath_project = get_filepath_project(infilepath)
@@ -203,7 +202,6 @@ class BlatRunWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
 
         if self.window and outfile_path:
             self.blatrun_outfile_editor.setText(outfile_path)
-
 
     def is_valid_inputs(self):
         blatrun_db = self.blatrun_db_editor.text()
@@ -257,7 +255,6 @@ class BlatRunWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
             self._run_blast()
         except Exception as e:
             QMessageBox.about(self, 'Error', str(e))
-
 
     def _run_blast(self):
         cmd = get_cmd('blat', category='blat')

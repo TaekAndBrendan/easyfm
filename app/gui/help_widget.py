@@ -4,7 +4,9 @@ from PyQt5.QtWidgets import (
     QVBoxLayout,
     QHBoxLayout,
 )
+
 from app.gui.utils import ScrollLabel
+
 
 class HelpWidget(QWidget):
     def __init__(self, parent=None):
