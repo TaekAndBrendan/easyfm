@@ -25,10 +25,11 @@ Hyungtaek Jung, Brendan Jeon, Daniel Ortiz-Barrientos: **_easyfm_**: An **easy**
 
 ### 3.1 STABLE (version 1.0.1)
 
-Release date: September 2021 **_easyfm_** is made up of six programs and packages (See LICENSE), mainly written in Python 3.7+.
+Release date: September 2021 
+**_easyfm_** is made up of six programs and packages (See LICENSE), mainly written in Python 3.7+.
 
 ### 3.2 INSTALLATION
-Windows and Mac OS: Please download the program from [this link](https://github.com/TaekAndBrendan/easyfm/raw/main/windows/easyfm.7z). Extract 'easyfm.7z' with [7z](https://www.7-zip.org/download.html) and double-click easyfm.exe.
+Windows: Please download the program from [this link](https://github.com/TaekAndBrendan/easyfm/raw/main/windows/easyfm.7z). Extract 'easyfm.7z' with [7z](https://www.7-zip.org/download.html) and double-click easyfm.exe.
 
 Linux or Mac: To install **_easyfm_**, run the following series of commands.
 
@@ -55,8 +56,8 @@ python easyfm.py
 
 * [Biopython](https://biopython.org/wiki/Documentation)  for biological data computation
 * [PyQt5](https://pypi.org/project/PyQt5/) for a Python binding of the cross-platform GUI toolkit Qt
-* [gffutils](https://github.com/daler/gffutils) for working with and manipulating the GFF and GTF format files
-* [Pyfastx](https://github.com/lmdu/pyfastx) for fast random access to sequences from plain and gzipped FASTA/Q file
+* [gffutils](https://github.com/daler/gffutils) for working with and manipulating the [GFF](https://seqan.readthedocs.io/en/master/Tutorial/InputOutput/GffAndGtfIO.html), [GFF3](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md) and [GTF](https://biocorecrg.github.io/PhD_course/gtf_format.html) format files
+* [Pyfastx](https://github.com/lmdu/pyfastx) for fast random access to sequences from plain and gzipped [FASTA](https://www.maplesoft.com/support/help/Maple/view.aspx?path=Formats/FASTA) and [FASTQ](https://www.maplesoft.com/support/help/maple/view.aspx?path=Formats%2FFASTQ) files
 * [BLAST+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download) and [Ensembl](https://m.ensembl.org/info/docs/webcode/mirror/tools/blast.html) for a sequence similarity search
 * [BLAT](https://genome.ucsc.edu/goldenPath/help/blatSpec.html) and [Ensembl](https://m.ensembl.org/info/docs/webcode/mirror/tools/blast.html) for rapidly aligning long sequences and gapped mapping to the genome
 
@@ -103,8 +104,7 @@ A) Create a local database by selecting nucleotide or protein.
 B) Job completion message and created database files listed in a secondary window.
 C) Run local BLAST with multiple features including output type.
 D) Convert from a BLAST archive file to a different output format.
-
-A BLAST xml file parsing with multiple options for a csv file.
+E) A BLAST xml file parsing with multiple options for a csv file.
 
 **Note: Please make sure all files are in the designated folder. Not sure, please see SW Step 1.**
 
@@ -115,7 +115,8 @@ A BLAST xml file parsing with multiple options for a csv file.
 * **BLAST Step 5**: To run local BLAST, click Run (Fig 2C).
 * **BLAST Step 6**: Select the proper Database Name generated from BLAST Step 2. And, select your input query file (fasta file format) to run against the local BLAST database that you created in BLAST Step 2 and 3. If necessary, feel free to use the Browse function. While the Out File can be automatically linked to the Project Folder, it is possible to change its destination using the Change Folder. However, it is highly recommended to use the Project Folder for all analyses.
 * **BLAST Step 7**: More BLAST options can be selected from the top-down menus of Tools, E-value, Output Type, and CPU. If necessary, users can provide further options via More Options Manually. Click Run to generate the local BLAST outcome. Once completed, all necessary files will be produced in the Project Folder unless users indicated the different output folder from BLAST Step 6 or SW Step1 (Fig 2C).
-* **BLAST Step 8**: If users selected BLAST archive format (ASN.1) from BLAST Step 7 but want to convert a different BLAST output format, please use the Convert option. Please see the Change Folder option in BLAST Step 7 (Fig 2D). BLAST Step 9: If users generated a BLAST xml file (internally via easyfm or externally from HPC) but want to parse it, please use the Parsing option. Both input and output files can be selected via Browse and Change Folder. And, further parsing parameters can be checked or unchecked including Rank, HSP number, E-value, Identify, and Query Coverage options (Fig 2E).
+* **BLAST Step 8**: If users selected BLAST archive format (ASN.1) from BLAST Step 7 but want to convert a different BLAST output format, please use the Convert option. Please see the Change Folder option in BLAST Step 7 (Fig 2D). 
+* **BLAST Step 9**: If users generated a BLAST xml file (internally via easyfm or externally from HPC) but want to parse it, please use the Parsing option. Both input and output files can be selected via Browse and Change Folder. And, further parsing parameters can be checked or unchecked including Rank, HSP number, E-value, Identify, and Query Coverage options (Fig 2E).
 
 ##### 3.4.2.2 BLAT Module
 
