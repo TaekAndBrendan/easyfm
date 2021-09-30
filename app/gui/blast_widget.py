@@ -706,10 +706,7 @@ class BlastConvertWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
         options.append('-archive')
         infilename = self.blastconvert_infile_editor.text()
 
-        _infilename = self.extract(infilename, btn=self.parsing_button)
-        if not _infilename:
-            return
-        options.append(_infilename)
+        options.append(infilename)
 
         out_type_sel = self.blastconvert_out_type_cb.currentIndex()
         out_type_dict = {
