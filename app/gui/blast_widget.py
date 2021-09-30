@@ -340,7 +340,7 @@ class BlastRunWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
         layout.addWidget(self.blastrun_out_type_cb)
 
         self.blastrun_cpu_cb = QComboBox()
-        self.blastrun_cpu_cb.addItem('CPU')
+        self.blastrun_cpu_cb.addItem('CPU to run (defualt: 1)')
         for i in range(1, cpu_count()+1):
             self.blastrun_cpu_cb.addItem('%i' % i)
         self.blastrun_cpu_cb.setCurrentIndex(0)
@@ -439,6 +439,10 @@ class BlastRunWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
 
         if self.blastrun_evalue_cb.currentIndex() == 0:
             QMessageBox.about(self, 'Information', 'Please check an E-value.')
+            return False
+
+        if self.blastrun_out_type_cb.currentIndex() == 0:
+            QMessageBox.about(self, 'Information', 'Please check an output type.')
             return False
 
         return True

@@ -96,10 +96,20 @@ class QProcessWidgetUtil:
 
         self.qprocess_button.setText('Processing...')
         self.qprocess_button.setEnabled(False)
-        query = cmd + ' ' + ' '.join(options)
-        self.process_log('Command ========================\n {}'.format(query))
-        self.final_msg = final_msg
-        self.qprocess.start(query)
+
+        try:
+            query = cmd + ' ' + ' '.join(options)
+            self.process_log('Command ========================\n {}'.format(query))
+            self.final_msg = final_msg
+            self.qprocess.start(query)
+
+        except Exception as e:
+            self.qprocess_button.setText(self.qprocess_button_label)
+            self.qprocess_button.setEnabled(True)
+            self.qprocess = None
+            self.error_msg = None
+
+            QMessageBox.about(self, 'Information', str(e))
 
     def handle_stderr(self):
         data = self.qprocess.readAllStandardError()
