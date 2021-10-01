@@ -126,7 +126,7 @@ class FAFQWidget(QWidget, BaseWidgetUtil):
 
         more_options = QVBoxLayout()
 
-        more_options.addWidget(IconLabel('Please insert your prefix ID list as a single .txt file without ‘>’ sign that you want to extract and save.'))
+        more_options.addWidget(IconLabel("Please insert your prefix ID list as a single .txt file without '>' sign that you want to extract and save."))
         
         layout = QHBoxLayout()        
         layout.addWidget(QLabel("Input User's Index File"))
@@ -240,10 +240,9 @@ class FAFQWidget(QWidget, BaseWidgetUtil):
                             "Open User's Index File",
                             project_folder_path(),
                             options=QFileDialog.DontUseNativeDialog,
-                            # filter='Fasta Files(*.fa *.fas *.fna *.fasta *.fastq *.fq *.txt);;All Files(*.*)')
                             filter='All Files(*.*)')
 
-        if self.window and is_valid(self, infilepath, "Please check user's index file"):
+        if self.window and infilepath:
             self.input_index_file_editor.setText(infilepath)
 
 
