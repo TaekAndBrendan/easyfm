@@ -23,13 +23,15 @@ Hyungtaek Jung, Brendan Jeon, Daniel Ortiz-Barrientos: **_easyfm_**: An **easy**
 * AUTHOR
 * COPYRIGHT
 
-### 3.1 STABLE (version 1.0.1)
+### 3.1 STABLE (version 1.0.4)
 
 Release date: September 2021 
 **_easyfm_** is made up of six programs and packages (See LICENSE), mainly written in Python 3.7+.
 
 ### 3.2 INSTALLATION
-Windows: Please download the program from [this link](https://github.com/TaekAndBrendan/easyfm/raw/main/windows/easyfm.7z). Extract 'easyfm.7z' with [7z](https://www.7-zip.org/download.html) and double-click easyfm.exe.
+Windows: Please download the program from [this link](https://github.com/TaekAndBrendan/easyfm/raw/main/windows/easyfm.7z). Extract 'easyfm.7z' with [7z](https://www.7-zip.org/download.html) and double-click easyfm.exe. 
+
+!! Please note, if there are any antivirus issues, please follow this step (e.g. The University of Queensland): 1) click "undo action token" from "other actions", 2) click "start undo", and 3) re-install the program. 
 
 Linux or Mac: To install **_easyfm_**, run the following series of commands.
 
