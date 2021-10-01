@@ -439,7 +439,7 @@ class SequenceConvertWidget(QWidget, BaseWidgetUtil):
         self.setLayout(main_layout)
 
         layout = QHBoxLayout()        
-        layout.addWidget(QLabel('Fasta File'))
+        layout.addWidget(QLabel('FastA/FastQ File'))
         
         self.file_editor = QLineEdit()
         layout.addWidget(self.file_editor)
