@@ -392,7 +392,7 @@ def reverse_complements(input_folder, out_folder):
         fpath = os.path.abspath(os.path.join(input_folder, f))
         if is_fasta_file(fpath):
             reverse_complement(fpath, os.path.join(out_folder, replace_ext(f, 'fa', 'R2')))
-        if get_compressed_file_type(infilepath) == 'fa':
+        if get_compressed_file_type(fpath) == 'fa':
             reverse_complement(fpath, os.path.join(out_folder, replace_ext(f, 'gz', 'R2')))
 
 
@@ -428,5 +428,5 @@ def reverses(input_folder, out_folder):
         fpath = os.path.abspath(os.path.join(input_folder, f))
         if is_fasta_file(fpath):
             reverse(fpath, os.path.join(out_folder, replace_ext(f, 'fa', 'R')))
-        if get_compressed_file_type(infilepath) == 'fa':
+        if get_compressed_file_type(fpath) == 'fa':
             reverse_complement(fpath, os.path.join(out_folder, replace_ext(f, 'gz', 'R')))
