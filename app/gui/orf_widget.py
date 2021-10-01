@@ -288,7 +288,7 @@ class ORFFinderWidget(QWidget, BaseWidgetUtil):
     def worker_finished_callback(self):
         nucl_outfilename = self.orf_nucl_outfile_editor.text()
         prot_outfilename = self.orf_prot_outfile_editor.text()
-        QMessageBox.about(self, 'Saved Fasta', 'Saved fasta in {} and {}'.format(nucl_outfilename, prot_outfilename))
+        QMessageBox.about(self, 'Saved Fasta', 'Saved fasta in <b>{}</b> and <b>{}</b>.'.format(nucl_outfilename, prot_outfilename))
         self.qprocess_button.setText('Find ORFs')
         self.qprocess_button.setEnabled(True)
 

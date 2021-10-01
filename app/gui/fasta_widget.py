@@ -294,10 +294,15 @@ class FAFQWidget(QWidget, BaseWidgetUtil):
                                 os.path.join(project_folder_path(), filename),
                                 '.fa;;All files (*.*)')
 
-        if self.window and new_filename:
-            with open(new_filename, 'w') as f:
-                f.write('>{}\n'.format(item_data))
-                f.write(self.fastaq[item_data].seq)
+        try:
+            if self.window and new_filename:
+                with open(new_filename, 'w') as f:
+                    f.write('>{}\n'.format(item_data))
+                    f.write(self.fastaq[item_data].seq)
+        except Exception as e:
+            print(e)
+            QMessageBox.about(self, 'Information', str(e))
+
 
     def save_filtered_indexes(self):
         if not self.is_valid_inputs():
@@ -326,12 +331,11 @@ class FAFQWidget(QWidget, BaseWidgetUtil):
 
         user_indexes = None
 
-        if not _prefix_indexes:
-            with open(infilepath, 'r') as f:
-                user_indexes = [line.replace('>', '').strip() for line in f]
-
-        # self._save_indexes(outfile_path, user_indexes, _prefix_indexes)
         try:
+            if not _prefix_indexes:
+                with open(infilepath, 'r') as f:
+                    user_indexes = [line.replace('>', '').strip() for line in f]
+
             self._save_indexes(outfile_path, user_indexes, _prefix_indexes)
         except Exception as e:
             QMessageBox.about(self, 'Information', str(e))
@@ -348,7 +352,7 @@ class FAFQWidget(QWidget, BaseWidgetUtil):
         self.save_filtered_indexes_button.setEnabled(False)
 
     def fasta_save_worker_finished_callback(self):
-        QMessageBox.about(self, 'Saved Fasta', 'Saved {} Sequences in {}'.format(self.fasta_save_worker.saved_count, self.fasta_save_worker.outfile_path))
+        QMessageBox.about(self, 'Saved Fasta', 'Saved <b>{}</b> Sequences in <b>{}</b>'.format(self.fasta_save_worker.saved_count, self.fasta_save_worker.outfile_path))
         self.save_filtered_indexes_button.setText('Save Indexes')
         self.save_filtered_indexes_button.setEnabled(True)
 
@@ -531,10 +535,15 @@ class SequenceConvertWidget(QWidget, BaseWidgetUtil):
         input_folder_path = self.input_folder_editor.text()
         out_folder_path = self.out_folder_editor.text()
 
+
+        if infilepath and outfilepath and input_folder_path and out_folder_path:
+            QMessageBox.about(self, 'Information', 'Please select a file or or a folder.')
+            return False
+
         if is_valid(self, infilepath, hide_msg=True) == False and \
             is_valid(self, input_folder_path, hide_msg=True) == False and \
             is_valid(self, out_folder_path, hide_msg=True) == False:
-            QMessageBox.about(self, 'Information', 'Please check a fasta file or input folder')
+            QMessageBox.about(self, 'Information', 'Please check a fasta file or input folder.')
             return False
 
         if is_valid(self, input_folder_path, hide_msg=True) == True and \
@@ -544,7 +553,7 @@ class SequenceConvertWidget(QWidget, BaseWidgetUtil):
         if is_valid(self, infilepath, 'Please check a fasta file.'):
             return True
 
-        if is_valid(self, input_folder_path, 'Please check a input folder') and is_valid(self, out_folder_path, 'Please check a out folder'):
+        if is_valid(self, input_folder_path, 'Please check a input folder.') and is_valid(self, out_folder_path, 'Please check a out folder.'):
             return True
 
         return False
@@ -605,9 +614,9 @@ class SequenceConvertWidget(QWidget, BaseWidgetUtil):
 
         # folder
         if input_folder_path and out_folder_path: 
-            QMessageBox.about(self, 'Saved Files', 'Reverse complement fasta are saved in {}'.format(out_folder_path))
+            QMessageBox.about(self, 'Saved Files', 'Reverse complement fasta are saved in <b>{}</b>.'.format(out_folder_path))
         else:
-            QMessageBox.about(self, 'Saved Files', 'Reverse complement fasta are saved in {}'.format(outfilepath))
+            QMessageBox.about(self, 'Saved Files', 'Reverse complement fasta are saved in <b>{}</b>.'.format(outfilepath))
 
         self.reverse_complement_button.setText('Reverse Complement')
         self.reverse_complement_button.setEnabled(True)
@@ -653,9 +662,9 @@ class SequenceConvertWidget(QWidget, BaseWidgetUtil):
 
         # folder
         if input_folder_path and out_folder_path: 
-            QMessageBox.about(self, 'Saved Files', 'Reverse fasta are saved in {}'.format(out_folder_path))
+            QMessageBox.about(self, 'Saved Files', 'Reverse fasta are saved in <b>{}</b>.'.format(out_folder_path))
         else:
-            QMessageBox.about(self, 'Saved File', 'Reverse fasta are saved in {}'.format(outfilepath))
+            QMessageBox.about(self, 'Saved File', 'Reverse fasta are saved in <b>{}</b>.'.format(outfilepath))
 
         self.reverse_complement_button.setText('Reverse Complement')
         self.reverse_complement_button.setEnabled(True)
@@ -833,7 +842,7 @@ class FQ2FAWidget(QWidget, BaseWidgetUtil):
 
     def fa2fq_save_worker_finished_callback(self):
         outfilename = self.outfile_editor.text()
-        QMessageBox.about(self, 'Saved Fasta', 'Converted records in {}'.format(outfilename))
+        QMessageBox.about(self, 'Saved Fasta', 'Converted records in <b>{}</b>.'.format(outfilename))
         self.extrace_button.setText('Convert')
         self.extrace_button.setEnabled(True)
 
@@ -1124,7 +1133,7 @@ class GffWidget(QWidget, BaseWidgetUtil):
         reverse_flanking_regions = 0 if self.reverse_flanking_regions_editor.text() == '' else int(self.reverse_flanking_regions_editor.text())
 
         reply = QMessageBox.question(self, 'Saved Feature',
-                                    'Do you want to save this feature?\n(forward flanking regions: {},reverse flanking regions: {})'.format(forward_flanking_regions, reverse_flanking_regions),
+                                    'Do you want to save this feature?<br/>(forward flanking regions: <b>{}</b>,reverse flanking regions: <b>{}</b>)'.format(forward_flanking_regions, reverse_flanking_regions),
                                      QMessageBox.Yes | QMessageBox.No,
                                      QMessageBox.Yes)
         if reply == QMessageBox.No:
@@ -1166,7 +1175,7 @@ class GffWidget(QWidget, BaseWidgetUtil):
                 f.write(ids)
                 f.write(feature.sequence(fastafile))
 
-            QMessageBox.about(self, 'Saved Features', 'Feature are saved in ' + new_filename)
+            QMessageBox.about(self, 'Saved Features', 'Feature are saved in {}.'.format(new_filename))
 
     def _save_filtered_features(self, save_folder):
 
@@ -1188,7 +1197,7 @@ class GffWidget(QWidget, BaseWidgetUtil):
         self.save_filtered_features_button.setEnabled(False)
 
     def worker_finished_callback(self):
-        QMessageBox.about(self, 'Saved Features', 'All features are saved')
+        QMessageBox.about(self, 'Saved Features', 'All features are saved.')
         self.save_filtered_features_button.setText('Save all filtered features')
         self.save_filtered_features_button.setEnabled(True)
 

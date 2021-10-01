@@ -692,6 +692,10 @@ class BlastConvertWidget(QWidget, QProcessWidgetUtil, BaseWidgetUtil):
             QMessageBox.about(self, 'Information', 'Please check a out file.')
             return False
 
+        if self.blastconvert_out_type_cb.currentIndex() == 0:
+            QMessageBox.about(self, 'Information', 'Please check an output type.')
+            return False
+
         if self.blastconvert_infile_editor.text() == self.blastconvert_outfile_editor.text():
             QMessageBox.about(self, 'Information', 'You have selected the same file.')
             return False
