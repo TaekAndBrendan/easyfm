@@ -39,11 +39,16 @@ from app.tools.utils import write_config, project_folder_path, open_default_appl
 from app.tools.biofiles import open_blast_result_as_table, open_psl_as_table
 
 
-def is_valid(widget, infilepath, msg=None):
+def is_valid(widget, infilepath, msg=None, hide_msg=False):
     if not infilepath or not os.path.exists(infilepath):
+        if hide_msg:
+            return False
+
         _msg = msg + ' The selected file or folder might not be found.' if msg else 'Please check that you supplied the correct filename or folder. The selected file or folder could not be found.'
         QMessageBox.about(widget, 'Information', _msg)
+
         return False
+
     return True
 
 

@@ -528,11 +528,23 @@ class SequenceConvertWidget(QWidget, BaseWidgetUtil):
     def is_valid_inputs(self):
         infilepath = self.file_editor.text()
         outfilepath = self.outfile_editor.text()
-        if is_valid(self, infilepath, 'Please check a fasta file.'):
-            return True
 
         input_folder_path = self.input_folder_editor.text()
         out_folder_path = self.out_folder_editor.text()
+
+        if is_valid(self, infilepath, hide_msg=True) == False and \
+            is_valid(self, input_folder_path, hide_msg=True) == False and \
+            is_valid(self, out_folder_path, hide_msg=True) == False:
+            QMessageBox.about(self, 'Information', 'Please check a fasta file or input folder')
+            return False
+
+        if is_valid(self, input_folder_path, hide_msg=True) == True and \
+            is_valid(self, out_folder_path, hide_msg=True) == True:
+            return True
+
+        if is_valid(self, infilepath, 'Please check a fasta file.'):
+            return True
+
         if is_valid(self, input_folder_path, 'Please check a input folder') and is_valid(self, out_folder_path, 'Please check a out folder'):
             return True
 
