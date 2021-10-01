@@ -506,7 +506,7 @@ class SequenceConvertWidget(QWidget, BaseWidgetUtil):
                                     'Open File',
                                     project_folder_path(),
                                     options=QFileDialog.DontUseNativeDialog,
-                                    filter='Fasta Files(*.fa *.fas *.fna *.fasta *.gz);;All Files(*.*)')
+                                    filter='Fasta Files(*.fa *.fas *.fna *.fasta *.fastq *.fq *.gz);;All Files(*.*)')
 
         if self.window and infilename:
             self.file_editor.setText(infilename)
