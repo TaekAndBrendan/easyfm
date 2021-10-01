@@ -166,7 +166,7 @@ class MainWindow(QMainWindow):
         # help_menu.addAction(self.help_show_action)
 
     def show_about_action(self):
-        msg = '{}\n version 1.0.3\n'.format(APP_NAME)
+        msg = '{}\n version 1.0.4\n'.format(APP_NAME)
         QMessageBox.about(self, 'About', msg)
 
     def right_position_toggle_log_view(self):
