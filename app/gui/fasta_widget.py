@@ -800,10 +800,6 @@ class FQ2FAWidget(QWidget, BaseWidgetUtil):
             QMessageBox.about(self, 'Information', 'Please check a input file. Only FastaQ file is accepted.')
             return False
 
-        outfilepath = self.outfile_editor.text()
-        if not is_valid(self, outfilepath, 'Please check a out file.'):
-            return False
-
         return True
 
     def run_extract(self):
