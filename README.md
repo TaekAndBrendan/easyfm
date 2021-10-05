@@ -10,7 +10,7 @@ Hyungtaek Jung, Brendan Jeon and Daniel Ortiz-Barrientos
 
 ## 2 Citation
 
-Hyungtaek Jung, Brendan Jeon, Daniel Ortiz-Barrientos: **_easyfm_**: An **easy** software suite for **f**ile **m**anipulation of Next Generation Sequencing data on desktops, PLoS Computational Biology Sumbitted.
+Hyungtaek Jung, Brendan Jeon, Daniel Ortiz-Barrientos: **_easyfm_**: An **easy** software suite for **f**ile **m**anipulation of Next Generation Sequencing data on desktops, [PLoS Computational Biology Sumbitted](https://www.biorxiv.org/content/10.1101/2021.09.29.462291v1).
 
 ## 3 Contents
 
