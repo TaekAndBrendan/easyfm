@@ -29,11 +29,11 @@ Release date: September 2021
 **_easyfm_** is made up of six programs and packages (See LICENSE), mainly written in Python 3.7+.
 
 ### 3.2 INSTALLATION
-Windows: Please download the program from [this link](https://github.com/TaekAndBrendan/easyfm/raw/main/windows/easyfm.7z). Extract 'easyfm.7z' with [7z](https://www.7-zip.org/download.html) and double-click easyfm.exe. 
+**Windows**: Please download the program from [this link](https://github.com/TaekAndBrendan/easyfm/raw/main/windows/easyfm.7z). Extract 'easyfm.7z' with [7z](https://www.7-zip.org/download.html) and double-click easyfm.exe. 
 
-**!!! Please note**, for antivirus issues, please follow these steps (e.g. The University of Queensland): 1) click "undo action token" from "other actions", 2) click "start undo", and 3) re-install the program. Any other issues, we highly encourage users to use the [Issues](https://github.com/TaekAndBrendan/easyfm/issues). 
+**!!! Please note**, for antivirus issues, please follow these steps (e.g. The University of Queensland): 1) click "undo action token" from "other actions", 2) click "start undo", and 3) re-install the program. Alternatively, if you see this dialog box "Suspicious File Warning", "It contains a suspicious file. Do you want to proceed with decompression?", please just click "Yes". Any other issues, we highly encourage users to use the [Issues](https://github.com/TaekAndBrendan/easyfm/issues).
 
-Linux or Mac: To install **_easyfm_**, run the following series of commands.
+**Linux or Mac**: To install **_easyfm_**, run the following series of commands.
 
 ~~~
 # Create the virtual environment
